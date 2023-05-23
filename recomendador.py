@@ -1,5 +1,4 @@
-
-import streamlit as st
+mport streamlit as st
 
 import pandas as pd
 import numpy as np
@@ -85,41 +84,4 @@ if (clasif):
             'Nivel Educativo': niv_educativo, 'Tipo de ASS Vinculada': ass, 'Sexo': sexo, 'Régimen de salud': reg_salud, 'N° de Hijos': hijos}
 
         pred_ft(nrow)
-        #loaded_model = loaded_model()
-    #1er modelo!
-        #br, user_dist = loc_aware(2, tipon, float(lat), float(lon))
-        
-        #2do modelo!
-        #predictions2 =[]
-        #for i in range(50):
-
-        #    predictions_a = loaded_model.predict(user,  br.iloc[i], r_ui=4)
-        #    predictions2.append(predictions_a)
-
-        #results = pd.DataFrame(predictions2)
-        #results.sort_values(by ='est', ascending =False, inplace = True)
-        #results = results.merge(user_dist, how ='left', left_on = 'iid', right_on = 'business_id' )
-        #results_type = results[results['tipo'] == tipon]
-        #results_type = results_type[results_type['est'] > 4 ]
-        #resultc = results_type.shape[0]
-        #st.write(resultc)
-        #b = results[results['tipo'] != tipon]
-        #b['index'] = b['stars'] #/b['distance_km']
-        #b = b.sort_values(by = ['index'] , ascending = False)
-        #b = b.head(5)
-        #frames = [results_type, b]
-        #results = pd.concat(frames)
-        #results= results.head(15)
-
-        
-        
-        #st.session_state.cont = resultc
-        #st.session_state.recom = results_type[['name', 'address', 'distance_km', 'categories', 'est']]
-        #st.session_state.recom2 = b[['name', 'address', 'distance_km', 'categories', 'est']]
-
-#else:
-
-    #'Te recomendamos estos establecimientos:'
-
-    # call to render Folium map in Streamlit
-    #st_data = st_folium(st.session_state.selected_map, width = Width, height = H)
+      
