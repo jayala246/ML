@@ -180,7 +180,7 @@ else:
             'C - CONTRIBUTIVO'))
         tipo_desmov = selectbox('Tipo de Desmovilización', (
             'Colectiva',
-            'Individual))
+            'Individual'))
         lin_fpt = selectbox('Línea de FpT para el Máx., Nivel',
             '<No Aplica>', '<No Registra>', 'OTROS',
             'OPERADORES DE MAQUINAS, EQUIPO Y TRANSPORTE', 'SERVICIOS',
