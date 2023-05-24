@@ -128,11 +128,7 @@ else:
                            ('<No Aplica>', 'Plan de Negocio', 'Vivienda', 'Educación Superior'))
         pos_con = selectbox('Posee Cónyuge o Compañero(a)?', (
             '<No Aplica>', 'No', 'Sí', '<No Registra>'))
-        tip_viv = selectbox('Tipo de Vivienda', (
-            '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
-           'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
-           'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
-           '<No Registra>'))
+
     
     with inputs[1]:
 
@@ -158,8 +154,6 @@ else:
             ('<No Aplica>', 'Certificado', 'Abandono sin justa causa',
             'Abandono con justa causa', 'Vinculado',
             'No vinculado por limitaciones físicas o mentales permanentes certificadas'))
-        int_gf = selectbox('Total Integrantes grupo familiar',
-                          ())
         val_hijos = radio('¿Tiene hijos?', ('Si', 'No'))
         if val_hijos == 'Si':
             hijos = slider('Número de hijos ', 1, 10, (1))
@@ -206,6 +200,11 @@ else:
            'Multiplicadores del Conocimiento',
            'Generación de espacios de recreación, Arte, Cultura y Deporte',
            'Recuperación Ambiental'))
+        tip_viv = selectbox('Tipo de Vivienda', (
+            '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
+           'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
+           'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
+           '<No Registra>'))
             
             
     data = DataFrame({ 
