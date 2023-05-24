@@ -1,4 +1,4 @@
-from streamlit import button, cache_resource, columns, markdown, plotly_chart, radio, selectbox, slider, dataframe as dt
+from streamlit import button, cache_resource, columns, markdown, plotly_chart, radio, selectbox, slider
 from datetime import date
 from joblib import load
 from pandas import DataFrame
@@ -106,7 +106,6 @@ def predict(data, model_name):
         1: 'Abandonará el proceso'
     }
     model = models[model_name]
-    dt(data)
     fig = make_subplots()
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)')
     probability = model.predict_proba(data)
