@@ -129,6 +129,11 @@ else:
         pos_con = selectbox('Posee Cónyuge o Compañero(a)?', (
             '<No Aplica>', 'No', 'Sí', '<No Registra>'))
         serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí'))
+        tip_viv = selectbox('Tipo de Vivienda', (
+            '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
+           'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
+           'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
+           '<No Registra>'))
     
     with inputs[1]:
 
@@ -199,11 +204,7 @@ else:
            'Multiplicadores del Conocimiento',
            'Generación de espacios de recreación, Arte, Cultura y Deporte',
            'Recuperación Ambiental'))
-        tip_viv = selectbox('Tipo de Vivienda', (
-            '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
-           'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
-           'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
-           '<No Registra>'))
+        
             
             
     data = DataFrame({ 
