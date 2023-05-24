@@ -16,7 +16,7 @@ class Preprocessor(BaseEstimator, TransformerMixin):
     def fit(self, x, y=None):
         return self
 
-    def transform(self, x: DataFrame, y: DataFrame | None = None):
+    def transform(self, x, y = None):
         x['OcupacionEconomica'].replace(
             'No Aplica', '<No Registra>', inplace=True)
         x['Posee Cónyuge o Compañero(a)?'].replace(
@@ -100,7 +100,7 @@ def load_models():
 models = load_models()
 
 
-def predict(data: DataFrame, model_name: str):
+def predict(data, model_name):
     classes = {
         0: 'Culminará el proceso',
         1: 'Abandonará el proceso'
