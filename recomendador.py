@@ -113,71 +113,120 @@ if modelo == 'Simple':
 else:
     inputs = columns(3)
     with inputs[0]:
-        serv_soc = selectbox('Posee Servicio Social?', (
-            'Posee Certificación de Servicio Social',
-            'No está vinculado a Servicio Social'))
-        ocupacion = selectbox('Ocupación económica', (
-            'Ocupados en el sector Informal',
-            '<No Registra>',
-            'No Aplica',
-            'Población Económicamente Inactiva',
-            'Desocupados'))
-        ass = selectbox('Tipo de ASS Vinculada', (
-            '<No Aplica>',
-            'Embellecimiento de Espacio Publico',
-            'Recuperación Ambiental',
-            'Generación de espacios de recreación, Arte, Cultura y Deporte',
-            'Aporte de habilidades Especiales que le participante ponga a disposición de la comunidad',
-            'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerable',
-            'Multiplicadores del Conocimiento'))
         grup_et = selectbox('Grupo Etario', ('<No Registra>', 'Entre 18 y 25 años',
-                                             'Entre 26 y 40 años', 'Entre 41 y 60 años', 'Mayor de 60 años'))
+                                             'Entre 26 y 40 años', 'Entre 41 y 60 años', 'Mayor de 60 años')) #si
+        dep_res = selectbox('Departamento de residencia',(
+           'Meta', 'Putumayo', 'Antioquia', 'Norte de Santander',
+           'Bogotá D.C.', 'Córdoba', 'Bolívar', 'Magdalena', 'Cesar',
+           'Cundinamarca', 'Nariño', 'Santander', 'Cauca', 'Chocó',
+           '<No Registra>', 'Caldas', 'Valle del Cauca', 'Casanare',
+           'Atlántico', 'Huila', 'Caquetá', 'Tolima', 'Quindio', 'La Guajira',
+           'Boyacá', 'Guaviare', 'Sucre', 'Vaupés', 'Risaralda', 'Guainía',
+           'Arauca', 'Amazonas', 'Vichada',
+           'Archipiélago de San Andrés. Providencia y Santa Catalina')) #si
+        tip_bie = selectbox('Tipo de BIE Accedido',
+                           ('<No Aplica>', 'Plan de Negocio', 'Vivienda', 'Educación Superior')) #si
+        pos_con = selectbox('Posee Cónyuge o Compañero(a)?', (
+            '<No Aplica>', 'No', 'Sí', '<No Registra>')) #si
+        tip_viv = selectbox('Tipo de Vivienda', (
+            '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
+           'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
+           'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
+           '<No Registra>')) #si
+    
     with inputs[1]:
-        des_bie = selectbox('Desagregado Desembolso BIE', (
-            'Posee desembolso BIE',
-            'No está en Proceso',
-            'Culminado'))
+
         reg_vivienda = selectbox('Régimen de tenencia Vivienda', (
-            '<No Aplica>',
-            'Con permiso del propietario, sin pago alguno',
-            'En arriendo o subarriendo', 'Es usufructo',
-            'Familiar', 'Otra forma de tenencia (posesión sin título, ocupante de hecho, propiedad colectiva, etc)',
-            'Posesión sin título (ocupante de hecho) o propiedad colectiva',
-            'Propia, la están pagando',
-            'Propia, totalmente pagada',
-            'Sana posesión con título'))
-        sexo = selectbox('Sexo', ('Masculino', 'Femenino'))
+           '<No Aplica>',
+           'Con permiso del propietario, sin pago alguno',
+           'En arriendo o subarriendo', 'Es usufructo',
+           'Familiar', 'Otra forma de tenencia (posesión sin título, ocupante de hecho, propiedad colectiva, etc)',
+           'Posesión sin título (ocupante de hecho) o propiedad colectiva',
+           'Propia, la están pagando',
+           'Propia, totalmente pagada',
+           'Sana posesión con título')) #si
+        sexo = selectbox('Sexo', ('Masculino', 'Femenino')) #si
+        Max_fpt = selectbox('Máximo Nivel FpT Reportado',(
+           '<No Aplica>', 'Complementario', 'Técnico', 'Semicalificado',
+           'Tecnológico', 'Operario', 'Transversal', 'Técnico Profesional',
+           'Técnico Laboral', 'Auxiliar', 'Técnico Laboral por Competencias',
+           'Especialización Tecnológica',
+           'Certificación por Evaluación de Competencias',
+           'Especialización Técnica'
+            )) #si
+        est_ass = selectbox('Estado de la vinculación ASS',
+            ('<No Aplica>', 'Certificado', 'Abandono sin justa causa',
+            'Abandono con justa causa', 'Vinculado',
+            'No vinculado por limitaciones físicas o mentales permanentes certificadas')) #si
+        int_gf = selectbox('Total Integrantes grupo familiar',
+                          ())
         val_hijos = radio('¿Tiene hijos?', ('Si', 'No'))
+        if val_hijos == 'Si':
+            hijos = slider('Número de hijos ', 1, 10, (1))
+        else:
+            hijos = -1  #si
+    
     with inputs[2]:
-        isun = selectbox('Estado ISUN', (
-            '<No Aplica>',
-            'En Funcionamiento',
-            'Cerrado',
-            'Pendiente por visita ISUN'))
+
         niv_educativo = selectbox('Nivel Educativo', (
             'Alfabetización',
             'Bachiller',
             'Básica Primaria',
             'Básica Secundaria',
-            'Por Establecer'))
+            'Por Establecer')) #si
         reg_salud = selectbox('Régimen de salud', (
             'S - SUBSIDIADO',
             '<No Registra>',
-            'C - CONTRIBUTIVO'))
-    if val_hijos == 'Si':
-        hijos = slider('Número de hijos ', 1, 10, (1))
-    else:
-        hijos = -1
-    data = DataFrame({
-        'Posee Servicio Social?': [serv_soc],
-        'DesagregadoDesembolsoBIE': [des_bie],
-        'Estado ISUN': [isun],
-        'OcupacionEconomica': [ocupacion],
-        'Régimen de tenencia Vivienda': [reg_vivienda],
-        'Nivel Educativo': [niv_educativo],
-        'Tipo de ASS Vinculada': [ass],
-        'Sexo': [sexo],
-        'Régimen de salud': [reg_salud],
-        'N° de Hijos': [hijos]})
+            'C - CONTRIBUTIVO')) #si
+        tipo_desmov = selectbox('Tipo de Desmovilización', (
+            'Colectiva',
+            'Individual)) #si
+        lin_fpt = selectbox('Línea de FpT para el Máx., Nivel',
+            '<No Aplica>', '<No Registra>', 'OTROS',
+            'OPERADORES DE MAQUINAS, EQUIPO Y TRANSPORTE', 'SERVICIOS',
+            'CARPINTERIA Y EBANISTERIA', 'SALUD',
+            'MECANICA AUTOMOTRIZ Y DE MOTOS', 'SISTEMAS',
+            'FINANZAS Y ADMINISTRACION', 'AGROPECUARIA', 'ALIMENTOS Y BEBIDAS',
+            'ELECTRICIDAD', 'CONSTRUCCION', 'MERCADEO Y VENTAS',
+            'MECANICA INDUSTRIAL', 'TRANSVERSAL', 'ELECTRONICA',
+            'CONFECCION, MARROQUINERIA Y CALZADO', 'AMBIENTAL',
+            'ARTESANIAS Y JOYERIA', 'ESTETICA',
+            'EXPLOTACION MINERA, PETROLEO Y GAS', 'DISEÑO Y ARTES GRAFICAS') #si
+        grup_f = slider('Integrantes grupo familiar', 0, 20, (1))
+        if grup_f ==0:
+            grup_f =-1
+        serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí')) #si
+        ocup = selectbox('Ocupacion económica', ('Ocupados en el sector Informal', 'No Aplica', '<No Registra>',
+            'Población Económicamente Inactiva', 'Desocupados')) #si
+        tip_ass = seelctbox('Tipo de ASS Vinculada',(
+            '<No Aplica>',
+           'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerables',
+           'Embellecimiento de Espacio Publico',
+           'Aporte de habilidades Especiales que le participante ponga a disposición de la comunidad',
+           'Multiplicadores del Conocimiento',
+           'Generación de espacios de recreación, Arte, Cultura y Deporte',
+           'Recuperación Ambiental')) #si
+            
+            
+    data = DataFrame({ 
+            'Tipo de Desmovilización':[tipo_desmov], 
+            'Grupo Etario':[grup_et], 
+            'Sexo':[sexo], 
+            'Departamento de residencia':[dep_res], 
+            'Nivel Educativo':[niv_educativo], 
+            'Máximo Nivel FpT Reportado':[Max_fpt], 
+            'Línea de FpT para el Máx.':[lin_fpt], 
+            'Nivel OcupacionEconomica':[ocup], 
+            'Tipo de BIE Accedido':[tip_bie], 
+            'Estado de la vinculación ASS':[est_ass], 
+            'Tipo de ASS Vinculada':[tip_ass], 
+            'Posee Cónyuge o Compañero(a)?':[pos_con], 
+            'N° de Hijos':[val_hijos], 
+            'Total Integrantes grupo familiar':[grup_f], 
+            'Tipo de Vivienda':[tip_viv], 
+            'Régimen de tenencia Vivienda':[reg_vivienda], 
+            'Posee Serv. Públicos Básicos':[serv_p], 
+            'Régimen de salud':[reg_salud]
+                     })
 if (button('Realizar Clasificación')):
     predict(data, modelo)
