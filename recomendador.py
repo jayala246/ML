@@ -175,7 +175,7 @@ else:
         tipo_desmov = selectbox('Tipo de Desmovilización', (
             'Colectiva',
             'Individual'))
-        lin_fpt = selectbox('Línea de FpT para el Máx., Nivel',
+        lin_fpt = selectbox('Línea de FpT para el Máx., Nivel',(
             '<No Aplica>', '<No Registra>', 'OTROS',
             'OPERADORES DE MAQUINAS, EQUIPO Y TRANSPORTE', 'SERVICIOS',
             'CARPINTERIA Y EBANISTERIA', 'SALUD',
@@ -185,7 +185,7 @@ else:
             'MECANICA INDUSTRIAL', 'TRANSVERSAL', 'ELECTRONICA',
             'CONFECCION, MARROQUINERIA Y CALZADO', 'AMBIENTAL',
             'ARTESANIAS Y JOYERIA', 'ESTETICA',
-            'EXPLOTACION MINERA, PETROLEO Y GAS', 'DISEÑO Y ARTES GRAFICAS')
+            'EXPLOTACION MINERA, PETROLEO Y GAS', 'DISEÑO Y ARTES GRAFICAS'))
         grup_f = slider('Integrantes grupo familiar', 0, 20, (1))
         if grup_f ==0:
             grup_f =-1
