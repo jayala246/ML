@@ -134,14 +134,7 @@ else:
            'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
            'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
            '<No Registra>'))
-        tip_ass = selectbox('Tipo de ASS Vinculada',(
-            '<No Aplica>',
-           'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerables',
-           'Embellecimiento de Espacio Publico',
-           'Aporte de habilidades Especiales que le participante ponga a disposición de la comunidad',
-           'Multiplicadores del Conocimiento',
-           'Generación de espacios de recreación, Arte, Cultura y Deporte',
-           'Recuperación Ambiental'))
+
     
     with inputs[1]:
 
@@ -172,6 +165,14 @@ else:
             hijos = slider('Número de hijos ', 1, 10, (1))
         else:
             hijos = -1 
+        tip_ass = selectbox('Tipo de ASS Vinculada',(
+            '<No Aplica>',
+           'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerables',
+           'Embellecimiento de Espacio Publico',
+           'Aporte de habilidades Especiales que le participante ponga a disposición de la comunidad',
+           'Multiplicadores del Conocimiento',
+           'Generación de espacios de recreación, Arte, Cultura y Deporte',
+           'Recuperación Ambiental'))
     
     with inputs[2]:
 
