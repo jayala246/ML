@@ -8,14 +8,14 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class Preprocessor(BaseEstimator, TransformerMixin):
-    def __init__(self, include_all: bool) -> None:
+    def __init__(self, include_all) -> None:
         super().__init__()
         self.include_all = include_all
 
     def fit(self, x, y=None):
         return self
 
-    def transform(self, x: DataFrame, y: DataFrame | None = None):
+    def transform(self, x, y = None):
         x['DesagregadoDesembolsoBIE'].replace(
             'Culminado con agotamiento de tiempo para acceder a BIE', 'Culminado sin desembolso', inplace=True)
         x['DesagregadoDesembolsoBIE'].replace(
