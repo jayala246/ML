@@ -260,7 +260,7 @@ else:
         val_familia = radio('¿Tiene familia?', ('Sí', 'No'))
         if val_familia == 'Sí':
             with numeric_inputs[1]:
-                familia = slider('Integrantes grupo familiar', 0, 20, (1))
+                familia = slider('Integrantes grupo familiar', 1, 20, (1))
         else:
             familia = -1
     data = DataFrame({
