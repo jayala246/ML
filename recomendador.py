@@ -251,13 +251,13 @@ else:
             'C - CONTRIBUTIVO'))
     numeric_inputs = columns([1, 2])
     with numeric_inputs[0]:
-        val_hijos = radio('¿Tiene hijos?', ('Sí', 'No'))
+        val_hijos = radio('¿Tiene registro de hijos?', ('Sí', 'No'))
         if val_hijos == 'Sí':
             with numeric_inputs[1]:
                 hijos = slider('Número de hijos ', 1, 10, (1))
         else:
             hijos = -1
-        val_familia = radio('¿Tiene familia?', ('Sí', 'No'))
+        val_familia = radio('¿Tiene registro de familia?', ('Sí', 'No'))
         if val_familia == 'Sí':
             with numeric_inputs[1]:
                 familia = slider('Integrantes grupo familiar', 1, 20, (1))
