@@ -128,7 +128,7 @@ else:
                            ('<No Aplica>', 'Plan de Negocio', 'Vivienda', 'Educación Superior'))
         pos_con = selectbox('Posee Cónyuge o Compañero(a)?', (
             '<No Aplica>', 'No', 'Sí', '<No Registra>'))
-
+        serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí'))
     
     with inputs[1]:
 
@@ -189,10 +189,9 @@ else:
         grup_f = slider('Integrantes grupo familiar', 0, 20, (1))
         if grup_f ==0:
             grup_f =-1
-        serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí'))
         ocup = selectbox('Ocupacion económica', ('Ocupados en el sector Informal', 'No Aplica', '<No Registra>',
             'Población Económicamente Inactiva', 'Desocupados'))
-        tip_ass = seelctbox('Tipo de ASS Vinculada',(
+        tip_ass = selectbox('Tipo de ASS Vinculada',(
             '<No Aplica>',
            'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerables',
            'Embellecimiento de Espacio Publico',
