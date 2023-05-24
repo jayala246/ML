@@ -123,16 +123,16 @@ else:
            'Atlántico', 'Huila', 'Caquetá', 'Tolima', 'Quindio', 'La Guajira',
            'Boyacá', 'Guaviare', 'Sucre', 'Vaupés', 'Risaralda', 'Guainía',
            'Arauca', 'Amazonas', 'Vichada',
-           'Archipiélago de San Andrés. Providencia y Santa Catalina')) #si
+           'Archipiélago de San Andrés. Providencia y Santa Catalina'))
         tip_bie = selectbox('Tipo de BIE Accedido',
-                           ('<No Aplica>', 'Plan de Negocio', 'Vivienda', 'Educación Superior')) #si
+                           ('<No Aplica>', 'Plan de Negocio', 'Vivienda', 'Educación Superior'))
         pos_con = selectbox('Posee Cónyuge o Compañero(a)?', (
-            '<No Aplica>', 'No', 'Sí', '<No Registra>')) #si
+            '<No Aplica>', 'No', 'Sí', '<No Registra>'))
         tip_viv = selectbox('Tipo de Vivienda', (
             '<No Aplica>', 'Casa', 'Apartamento', 'Casa-Lote', 'Habitación',
            'Finca', 'Rancho', 'Otro', 'Cuarto(s)', 'Vivienda (casa) indígena',
            'Otro tipo de vivienda (carpa, tienda, vagón, embarcación, cueva, refugio natural, puente, calle, etc.)',
-           '<No Registra>')) #si
+           '<No Registra>'))
     
     with inputs[1]:
 
@@ -144,8 +144,8 @@ else:
            'Posesión sin título (ocupante de hecho) o propiedad colectiva',
            'Propia, la están pagando',
            'Propia, totalmente pagada',
-           'Sana posesión con título')) #si
-        sexo = selectbox('Sexo', ('Masculino', 'Femenino')) #si
+           'Sana posesión con título'))
+        sexo = selectbox('Sexo', ('Masculino', 'Femenino'))
         Max_fpt = selectbox('Máximo Nivel FpT Reportado',(
            '<No Aplica>', 'Complementario', 'Técnico', 'Semicalificado',
            'Tecnológico', 'Operario', 'Transversal', 'Técnico Profesional',
@@ -153,18 +153,18 @@ else:
            'Especialización Tecnológica',
            'Certificación por Evaluación de Competencias',
            'Especialización Técnica'
-            )) #si
+            ))
         est_ass = selectbox('Estado de la vinculación ASS',
             ('<No Aplica>', 'Certificado', 'Abandono sin justa causa',
             'Abandono con justa causa', 'Vinculado',
-            'No vinculado por limitaciones físicas o mentales permanentes certificadas')) #si
+            'No vinculado por limitaciones físicas o mentales permanentes certificadas'))
         int_gf = selectbox('Total Integrantes grupo familiar',
                           ())
         val_hijos = radio('¿Tiene hijos?', ('Si', 'No'))
         if val_hijos == 'Si':
             hijos = slider('Número de hijos ', 1, 10, (1))
         else:
-            hijos = -1  #si
+            hijos = -1 
     
     with inputs[2]:
 
@@ -173,14 +173,14 @@ else:
             'Bachiller',
             'Básica Primaria',
             'Básica Secundaria',
-            'Por Establecer')) #si
+            'Por Establecer'))
         reg_salud = selectbox('Régimen de salud', (
             'S - SUBSIDIADO',
             '<No Registra>',
-            'C - CONTRIBUTIVO')) #si
+            'C - CONTRIBUTIVO'))
         tipo_desmov = selectbox('Tipo de Desmovilización', (
             'Colectiva',
-            'Individual)) #si
+            'Individual))
         lin_fpt = selectbox('Línea de FpT para el Máx., Nivel',
             '<No Aplica>', '<No Registra>', 'OTROS',
             'OPERADORES DE MAQUINAS, EQUIPO Y TRANSPORTE', 'SERVICIOS',
@@ -191,13 +191,13 @@ else:
             'MECANICA INDUSTRIAL', 'TRANSVERSAL', 'ELECTRONICA',
             'CONFECCION, MARROQUINERIA Y CALZADO', 'AMBIENTAL',
             'ARTESANIAS Y JOYERIA', 'ESTETICA',
-            'EXPLOTACION MINERA, PETROLEO Y GAS', 'DISEÑO Y ARTES GRAFICAS') #si
+            'EXPLOTACION MINERA, PETROLEO Y GAS', 'DISEÑO Y ARTES GRAFICAS')
         grup_f = slider('Integrantes grupo familiar', 0, 20, (1))
         if grup_f ==0:
             grup_f =-1
-        serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí')) #si
+        serv_p = selectbox('Posee Serv. Públicos Básicos',('<No Aplica>', 'No', 'Sí'))
         ocup = selectbox('Ocupacion económica', ('Ocupados en el sector Informal', 'No Aplica', '<No Registra>',
-            'Población Económicamente Inactiva', 'Desocupados')) #si
+            'Población Económicamente Inactiva', 'Desocupados'))
         tip_ass = seelctbox('Tipo de ASS Vinculada',(
             '<No Aplica>',
            'Acompañamiento a la atención en Salud y atención Alimentaria a comunidades vulnerables',
@@ -205,7 +205,7 @@ else:
            'Aporte de habilidades Especiales que le participante ponga a disposición de la comunidad',
            'Multiplicadores del Conocimiento',
            'Generación de espacios de recreación, Arte, Cultura y Deporte',
-           'Recuperación Ambiental')) #si
+           'Recuperación Ambiental'))
             
             
     data = DataFrame({ 
