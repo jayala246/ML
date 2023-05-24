@@ -127,7 +127,7 @@ today = date.today()
 Width = 700
 H = 600
 markdown("<h1 style='text-align: center'>Análisis de Factores de Riesgo que influyen en la deserción de desmovilizados que han ingresado al proceso de reintegración</h1>", True)
-markdown("<h2 style='text-align: center'>Oscar Julián Castañeda\nJuan David Ayala</h5>", True)
+markdown("<h2 style='text-align: center'>Oscar Julián Castañeda & Juan David Ayala</h5>", True)
 modelo = radio('¿Que modelo quiere utilizar?', ('Simple', 'Completo'))
 
 linea_fpt_options = (
