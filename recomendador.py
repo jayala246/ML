@@ -8,7 +8,6 @@ from datetime import date
 from models.full_tree import pred_ft
 from models.full_tree import pred_s
 
-st.write('prueba')
 today = date.today()
 #import pyautogui
 
